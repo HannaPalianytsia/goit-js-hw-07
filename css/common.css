@@ -13,7 +13,6 @@ body {
   line-height: 1.5;
 }
 
-/* ================== TASK 1 ================================ */
 li {
   list-style: none;
 }
@@ -28,6 +27,12 @@ h5,
 h6 {
   margin: 0;
 }
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ================== TASK 1 ================================ */
 #categories {
   display: inline-flex;
   padding: 24px;
@@ -79,3 +84,27 @@ h6 {
 }
 
 /* ================== TASK 2 ================================ */
+.gallery {
+  background-color: #fff;
+  padding: 100px 156px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 48px 24px;
+}
+.gallery li {
+  width: 360px;
+  height: 300px;
+  /* width: calc((100% - 24px * 2) / 3); */
+  /* height: calc((100% - 48px) / 2); */
+  background: url(<path-to-image>),
+    lightgray -76px -0.297px / 125.278% 100.198% no-repeat;
+}
+.gallery li img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+/* ================== TASK 3 ================================ */

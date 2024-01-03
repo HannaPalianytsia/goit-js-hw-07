@@ -28,6 +28,8 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector("ul#gallery");
-const imgList = images.map(image => `<img src="${image.url}" alt="${image.alt}">`).join("");
-gallery.insertAdjacentHTML("afterbegin", imgList)
+
+document.querySelector("ul.gallery").insertAdjacentHTML("afterbegin",
+    images
+    .map(image => `<li><img src="${image.url}" alt="${image.alt}"></li>`)
+    .join(""));
