@@ -10,4 +10,5 @@ function changeBodyColor() {
     document.querySelector("span.color").textContent = newColor;
 }
 
-document.querySelector("button.change-color").addEventListener("click", changeBodyColor);
+const btnChangeColor = document.querySelector("button.change-color");
+btnChangeColor.addEventListener("click", changeBodyColor);

@@ -1,4 +1,4 @@
-const listOfCategories = Array.from(document.querySelector("ul#categories").children);
+const listOfCategories = document.querySelector("ul#categories").children;
 console.log(`Number of categories: ${listOfCategories.length}`);
 
 listOfCategories.forEach(item => {

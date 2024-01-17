@@ -10,29 +10,26 @@ const inputCount = document.getElementById("controls").querySelector("input");
 const boxWithBoxes = document.querySelector("div#boxes");
 
 function createBoxes(amount) {
-  const arrayBoxesCreate = [];
+  destroyBoxes();
   for (let i = 0; i < amount; i++) {
-    arrayBoxesCreate.push('<div class="box"></div>')
-  }
-  boxWithBoxes.innerHTML = arrayBoxesCreate.join('');
-  const arrayBoxesStyles = document.querySelectorAll('div.box');
-  let boxWidth = 30;
-  for (let i = 0; i < amount; i++) {
-    arrayBoxesStyles[i].style.width = `${boxWidth}px`;
-    arrayBoxesStyles[i].style.height = `${boxWidth}px`;
-    arrayBoxesStyles[i].style.backgroundColor = getRandomHexColor();
-    boxWidth += 10;
+    const box = document.createElement("div");
+    let size = 30 + i * 10;
+    box.style.cssText =
+      `width: ${size}px; 
+      height: ${size}px;
+      background-color: ${getRandomHexColor()};`;
+    boxWithBoxes.appendChild(box);
   }
 }
 function destroyBoxes() {
-  boxWithBoxes.innerHTML = '';
+  boxWithBoxes.innerHTML = "";
 }
 
 btnCreate.addEventListener("click", (event) => { 
-  const count = inputCount.value;
+  const count = parseInt(inputCount.value, 10);
   if (count >= 1 && count <= 100 && count % 1 === 0) {
     createBoxes(count);
-    inputCount.value = '';
+    inputCount.value = "";
   }
   
 });
